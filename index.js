@@ -10,7 +10,7 @@ const app=express();
 
 //middleware setup
 app.use(cors({
-    origin:'*',
+    origin:'https://login-signup-frontend-phi.vercel.app',
     credentials:true,
     methods:["GET",'POST',"PUT","DELETE"]
 }
@@ -33,9 +33,9 @@ const userSchema=mongoose.Schema({
     password:String
 })
 const userModel=mongoose.model('user',userSchema)
-app.get('/', (req,res)=>{
-    res.json({name:"jeevi"})
-})
+// app.get('/', (req,res)=>{
+//     res.json({name:"jeevi"})
+// })
 //sign up
 app.post('/signup', async(req ,res)=>{
     const{name,email,password}=req.body;
